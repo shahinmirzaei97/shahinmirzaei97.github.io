@@ -1,3 +1,10 @@
+// Shahin Mirzaei
+// 103601159
+// Jenelle Chen
+// WEB222NGG
+// Final Assessment
+// April 22nd, 2021
+
 // List of videos in the system
 const videosList = [
   {
@@ -120,15 +127,13 @@ function generateRowHTML(video) {
             </div>`
 }
 
-// @TODO: Put your code here
-
 document.getElementById("btn-show-all").addEventListener("click", showAll)
 document.getElementById("btn-search").addEventListener("click", search)
 
 function showAll() {
   let i = 0
   const display = document.getElementById("results")
-
+  display.innerHTML = ""
   for (i = 0; i < videosList.length; i++) {
     display.innerHTML += generateRowHTML(videosList[i])
   }
@@ -146,7 +151,7 @@ function search() {
         display.innerHTML += generateRowHTML(videosList[i])
       }
     }
-    
+
     if (found === 0) {
       display.innerHTML = "<p>" + "No videos found with the keyword " + textSearch.value + "</p>"
     }
